@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/css/test.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
+        integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+    <nav id="navbar">
+        <ul>
+            <img src="/images/expense.png" alt="">
+            <li>Home <span class="fa-solid fa-house"></span></span></li>
+            <li id="report">Report <span class="fa-solid fa-crown crown_icon"></span></li>
+            <li id="show_leaderboard">Leaderboard <span class="fa-solid fa-crown crown_icon"></span>
+            </li>
+        </ul>
+        <ul>
+            <li id="rzp-button1">Buy Premium <span class="fa-solid fa-crown crown_icon"></span></span></li>
+            <li id="log_out">Logout <span class="fa-solid fa-arrow-right-from-bracket login_icon"></span></li>
+        </ul>
+    </nav>
+    <div id="container">
+        <form id="form">
+            <div>
+                <select class="options" id="rowsPerPage" onchange="updateRowsPerPage()">
+                    <option value="1" class="rows">Row Per Page</option>
+                    <option value="1" class="rows">1</option>
+                    <option value="2" class="rows">2</option>
+                    <option value="3" class="rows">3</option>
+                    <option value="5" class="rows">5</option>
+                    <option value="3" class="rows">10</option>
+                    <option value="3" class="rows">15</option>
+                    <option value="3" class="rows">20</option>
+                </select>
+            </div>
+            <div>
+                <label for="amount">Amount(<i class="fa-solid fa-indian-rupee-sign"></i>):</label><input type="number"
+                    id="amount" name="amount">
+            </div>
+            <div>
+                <label for="description">Description:</label><input type="text" id="description" name="description">
+            </div>
+            <div>
+                <label for="options">Choose Category:</label><select class="options" id="options" name="category">
+                    <option value="movie" class="category">Movie</option>
+                    <option value="food" class="category">Food</option>
+                    <option value="shoping" class="category">Shoping</option>
+                    <option value="phone" class="category">Phone</option>
+                    <option value="electricity_bill" class="category">Electricity Bill</option>
+                    <option value="others" class="category">Others</option>
+                </select>
+            </div>
+            <button id="add">Add Expense</button>
+        </form>
+
+
+        <div id="err_div"></div>
+        <div>
+            <div id="table-container">
+                <table cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Expense Amount</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tbody">
+                        <tr>
+                            <td>date</td>
+                            <td>Expense Amount</td>
+                            <td>description</td>
+                            <td>category</td>
+                            <td>action</td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div id="pagination"></div>
+            </div>
+        </div>
+
+    </div>
+
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+    <script src="/js/index.js"></script>
+
+</body>
+
+</html>

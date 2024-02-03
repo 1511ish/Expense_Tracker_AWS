@@ -1,0 +1,134 @@
+* {
+    padding: 0%;
+    margin: 0%;
+    user-select: none;
+}
+
+h4 {
+    color: red;
+}
+
+#navbar {
+    /* background-color: #4CAF50; */
+    background-color: #57738D;
+    display: flex;
+    justify-content: space-between;
+}
+
+#navbar ul {
+    display: flex;
+    padding: 8px 12px;
+    align-items: center;
+    justify-content: center;
+}
+
+#navbar ul li {
+    list-style: none;
+    padding: 12px 24px;
+    /* height: 50px; */
+    /* background-color: rgb(245, 245, 146); */
+    background: rgb(39, 47, 62);
+    border-radius: 10px;
+    color: #fff;
+    cursor: pointer;
+}
+
+#navbar ul li:hover {
+    background: #fff;
+    color: rgb(39, 47, 62);
+}
+
+.crown_icon {
+    color: #FFC434;
+}
+
+img {
+    height: 70px;
+}
+
+#container {
+    display: flex;
+    align-items: center;
+    background-color: #f3f3f3;
+    flex-direction: column;
+    height: 87vh;
+    padding-top: 1.5%;
+}
+
+
+/* table */
+#table-container {
+    width: 80%;
+    padding: 10px;
+    margin-top: 4%;
+    /* background: lightblue; */
+    background: #D3E9F7;
+    border-radius: 10px;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.25);
+}
+
+table {
+    width: 100%;
+    font-size: 20px;
+    border-collapse: collapse;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.png {
+    height: 4.5vh;
+}
+
+th,
+td {
+    /* text-align: center; */
+    border-bottom: 1px solid #ddd;
+}
+
+td {
+    padding: 8px 12px;
+    /* text-align: left; */
+    text-align: center;
+    background-color: #f3f3f3;
+}
+
+th {
+    padding: 12px;
+    background-color: #57738D;
+    color: #FFFF;
+}
+
+/* pagination */
+#pagination button {
+    background: #57738D;
+    color: #fff;
+    padding: 15px;
+    border-radius: 50px;
+}
+
+.trophy {
+    color: #FFC434;
+    font-size: 120%;
+
+}
+
+h3 {
+    display: flex;
+    justify-content: center;
+    text-transform: uppercase;
+    background-color: #f3f3f3;
+    font-size: x-large;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+#rzp-button1 {
+    pointer-events: none;
+    cursor: not-allowed;
+    display: flex;
+    align-items: center;
+    background-color: #f3f3f3;
+}

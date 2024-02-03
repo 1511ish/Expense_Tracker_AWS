@@ -1,0 +1,188 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background: #f6f5f7;
+    font-family: 'monserrat', sans-serif;
+    /* min-height: 100%; */
+    padding: 4%;
+}
+
+.container {
+    position: relative;
+    width: 800px;
+    max-width: 100%;
+    min-height: 480px;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25),
+        0 10px 10px rgba(0, 0, 0, 0.25)
+}
+
+.sign-up,
+.sign-in {
+    position: absolute;
+    left: 0;
+    height: 100%;
+    transition: all .5s ease-in-out;
+}
+
+.overlay-left,
+.overlay-right {
+    position: absolute;
+    top: 0;
+    right: 0;
+    transition: all .5s ease-in-out;
+
+    /* background: linear-gradient(to right, #ff4b28, #ff228c); */
+    /* background: linear-gradient(to right, #57738D, #ff228c); */
+    background: linear-gradient(to right, #57738D, #7B9BAF);
+    color: #eee;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+.sign-up {
+    width: 50%;
+    z-index: 1;
+}
+
+.sign-in {
+    width: 50%;
+    z-index: 2;
+}
+
+.overlay-left {
+    width: 50%;
+    z-index: 3;
+}
+
+.overlay-right {
+    width: 50%;
+    z-index: 4;
+}
+
+form {
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    text-align: center;
+}
+
+h2 {
+    font-size: xx-large;
+    font-weight: 900;
+    margin: 5px;
+}
+
+h4 {
+    font-size: x-large;
+    font-weight: 900;
+}
+
+p {
+    /* font-size: 14px; */
+    font-weight: 100;
+    line-height: 20px;
+    letter-spacing: 0.5px;
+    margin: 15px 0 20px;
+}
+
+.sign-in p,
+.sign-up p {
+    margin: 2px;
+    color: #807f7f;
+    font-size: 15px;
+}
+
+input {
+    background: #eee;
+    padding: 12px 15px;
+    margin: 8px 15px;
+
+    width: 100%;
+    border-radius: 5px;
+    border: none;
+}
+
+a {
+    color: #464646;
+    font-size: 14px;
+    text-decoration: none;
+    margin: 15px 0;
+}
+
+button {
+    color: #fff;
+    /* background: #ff4b2b; */
+    /* background: rgb(76, 76, 76); */
+    background: rgb(39, 47, 62);
+    font-size: 13px;
+    font-weight: bold;
+    padding: 12px 55px;
+    margin: 15px;
+    border-radius: 20px;
+    /* border: 1px solid #ff4b2b; */
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    transition: transform 80ms ease-in;
+    cursor: pointer;
+}
+
+button:active {
+    transform: scale(0.90);
+}
+
+#signIn,
+#signUp {
+    background-color: transparent;
+    border: 2px solid #fff;
+}
+
+.container.right-panel-active .sign-in {
+    transform: translateX(100%);
+}
+
+.container.right-panel-active .sign-up {
+    transform: translateX(100%);
+    z-index: 5;
+}
+
+.container.right-panel-active .overlay-left {
+    transform: translateX(-100%);
+    z-index: 5;
+}
+
+.container.right-panel-active .overlay-right {
+    transform: translateX(-100%);
+}
+
+.overlay-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: transform 2s ease-in-out;
+    z-index: 100;
+}
+
+.container.right-panel-active .overlay-container {
+    transform: translateX(-100%);
+}
