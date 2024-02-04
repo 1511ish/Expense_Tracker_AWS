@@ -2,7 +2,6 @@ const Sib = require('sib-api-v3-sdk')
 require('dotenv').config();
 const uuid = require('uuid')
 const bcrypt = require('bcrypt')
-const path = require('path');
 const sequelize = require('../util/database')
 const User = require('../models/User')
 const ForgotPasswordRequest = require('../models/ForgotPasswordRequests');
@@ -10,8 +9,6 @@ const ForgotPasswordRequest = require('../models/ForgotPasswordRequests');
 const client = Sib.ApiClient.instance
 const apiKey = client.authentications['api-key']
 apiKey.apiKey = process.env.API_KEY;
-console.log(process.env.API_KEY)
-// apiKey.apiKey = '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';
 
 const tranEmailApi = new Sib.TransactionalEmailsApi();
 
@@ -48,7 +45,6 @@ exports.postResetPassword = async (req, res, next) => {
 
     } catch (err) {
         console.log(err)
-        http://localhost:3000/password/resetPassword/9f675892-fc5a-49c0-b2cf-a266c190853a
         return res.status(403).json({ message: 'Error sending email!' })
     }
 }

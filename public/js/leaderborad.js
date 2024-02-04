@@ -9,7 +9,7 @@ const logOut_btn = document.getElementById('log_out');
 showLeaderBoard();
 async function showLeaderBoard() {
     const token = localStorage.getItem('token');
-    const response = await axios.get('premium/showLeaderBoard', { headers: { "Authorization": token } })
+    const response = await axios.get('showLeaderBoard', { headers: { "Authorization": token } })
     const arr = response.data;
     let i = 0
     arr.forEach(element => {

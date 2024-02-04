@@ -47,7 +47,7 @@ app.use('/purchase', purchaseRoutes);
 app.use('/premium', premiumFeatureRoutes);
 app.use('/password', passwordRoutes);
 app.get('/', (req, res) => {
-    res.sendFile('notFound.html',{root:'views'});
+    res.sendFile('notfound.html',{root:'views'});
 });
 
 User.hasMany(Expense, { onDelete: 'CASCADE' });

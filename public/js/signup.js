@@ -26,7 +26,7 @@ async function signup(e) {
             email: email.value,
             password: password.value
         }
-        const response = await axios.post('http://localhost:3000/user/signup', user);
+        const response = await axios.post('user/signup', user);
         if (response.status === 201) {
             alert("user signup successfully.");
             // window.location.href =  "./login.html";
@@ -56,7 +56,7 @@ async function login(e) {
             email: email.value,
             password: password.value
         }
-        response = await axios.post('http://localhost:3000/user/login', loginDetails);
+        response = await axios.post('user/login', loginDetails);
 
         localStorage.setItem('token', response.data.token);
         localStorage.setItem('isPremium', response.data.isPrimium);
@@ -83,7 +83,7 @@ async function resetPassword(e) {
         const emailObj = {
             email: email.value
         }
-        const response = await axios.post('http://localhost:3000/password/forgotpassword', emailObj);
+        const response = await axios.post('password/forgotpassword', emailObj);
         alert(`${response.data.message}`);
     } else {
         window.alert("please fill email input first before press reset password!");
@@ -91,6 +91,4 @@ async function resetPassword(e) {
     email.value = '';
 }
 
-
-// console.log('signup page.');
 

@@ -56,12 +56,10 @@ function listTotal(total, tbody, date) {
     cell1.innerHTML = `<button class='download_btn' id=${date}>Recently downloaded report</button>`;
     const RD_btn = document.getElementById(`${date}`);
     RD_btn.addEventListener('click', () => {
-        console.log("cliked");
-        axios.get('http://localhost:3000/premium/get-downlodedFileUrls', { headers: { 'Authorization': token } })
+        axios.get('get-downlodedFileUrls', { headers: { 'Authorization': token } })
             .then(response => {
                 RDR_ul.innerHTML = ``;
                 RDR_ul.innerHTML = '<i class="fa-solid fa-xmark" id="close"></i>';
-                console.log(RDR_ul);
                 RDRC.style.zIndex = "2";
                 document.getElementById('close').addEventListener('click', () => { RDRC.style.zIndex = "-1"; })
                 for (var i = 0; i < response.data.fileURL.length; i++) {
@@ -89,7 +87,7 @@ daily_show.addEventListener('click', () => {
     const token = localStorage.getItem('token');
     const decodeToken = parseJwt(token);
     const date = daily_date.value;
-    axios.get(`http://localhost:3000/premium/dailyReport/${date}`, { headers: { 'Authorization': token } })
+    axios.get(`dailyReport/${date}`, { headers: { 'Authorization': token } })
         .then(({ data: { allExpenses, total } }) => {
             listExpenses(allExpenses, daily_tbody);
             listTotal(total, daily_tbody, date);
@@ -99,7 +97,7 @@ daily_show.addEventListener('click', () => {
 monthly_show.addEventListener('click', () => {
     const token = localStorage.getItem('token');
     const date = monthly_date.value;
-    axios.get(`http://localhost:3000/premium//monthlyReport/${date}`, { headers: { 'Authorization': token } })
+    axios.get(`monthlyReport/${date}`, { headers: { 'Authorization': token } })
         .then(({ data: { allExpenses, total } }) => {
             listExpenses(allExpenses, monthly_tbody);
             listTotal(total, monthly_tbody, date);
@@ -128,7 +126,7 @@ document.getElementById('log_out').addEventListener('click', () => {
 
 function download(e, date) {
     e.preventDefault();
-    axios.get(`premium/download/${date}`, { headers: { "Authorization": token } })
+    axios.get(`download/${date}`, { headers: { "Authorization": token } })
         .then((res) => {
             if (res.status) {
                 var a = document.createElement('a');
