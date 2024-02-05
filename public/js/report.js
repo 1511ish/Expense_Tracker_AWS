@@ -10,6 +10,16 @@ const monthly_tbody = document.getElementById('monthly_tbody');
 const show_leaderboard = document.getElementById('show_leaderboard');
 const home = document.getElementById('home');
 const token = localStorage.getItem('token');
+
+initial()
+function initial(){
+    if(localStorage.getItem('token')){
+        console.log('thik h');
+    }else{
+        window.alert("you have to login first to get the functionality.");
+        window.location.href = "../home";
+    }
+}
 function parseJwt(token) {
     var base64Url = token.split('.')[1];
     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -91,6 +101,9 @@ daily_show.addEventListener('click', () => {
         .then(({ data: { allExpenses, total } }) => {
             listExpenses(allExpenses, daily_tbody);
             listTotal(total, daily_tbody, date);
+        }).catch(() => {
+            window.alert("you have to login first to get the functionality.");
+            window.location.href = "../home";
         })
 })
 
@@ -101,17 +114,18 @@ monthly_show.addEventListener('click', () => {
         .then(({ data: { allExpenses, total } }) => {
             listExpenses(allExpenses, monthly_tbody);
             listTotal(total, monthly_tbody, date);
+        }).catch(() =>{
+            window.alert("you have to login first to get the functionality.");
+            window.location.href = "../home";
         })
 })
 
 show_leaderboard.addEventListener('click', () => {
-    // window.location.replace("leaderboard.html");
-    window.location.href("leaderboard");
-    console.log("cahl toh raha..hjgujg");
+    window.location.href = "leaderboard";
 })
 
 home.addEventListener('click', () => {
-    window.location.href('../user');
+    window.location.href = '../user';
 })
 
 document.getElementById('rzp-button1').style.background = '#fff';
@@ -119,7 +133,7 @@ document.getElementById('rzp-button1').style.color = 'rgb(39, 47, 62)';
 document.getElementById('rzp-button1').innerHTML = "You are a Premium user.<span class='fa-solid fa-crown crown_icon'></span>"
 
 document.getElementById('log_out').addEventListener('click', () => {
-    window.location.href("../home");
+    window.location.href = "../home";
     localStorage.removeItem('token');
 })
 

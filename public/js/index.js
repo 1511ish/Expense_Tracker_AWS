@@ -57,6 +57,7 @@ window.addEventListener("DOMContentLoaded", () => {
         getExpenses(1);
     } else {
         window.alert("You have to login first to get this page.");
+        window.location.href = "../home";
     }
 
     // axios.get('http://localhost:3000/user/get-downlodedFileUrls', { headers: { 'Authorization': token } })
@@ -268,7 +269,7 @@ async function showLeaderBoard() {
     console.log(decodeToken);
     const isPremiumUser = decodeToken.isPremium;
     if (isPremiumUser)
-        window.location.replace("premium/leaderboard");
+        window.location.href = "premium/leaderboard";
     else {
         window.alert("You have to buy premiumship to unlock this feature.");
     }
@@ -308,7 +309,7 @@ report.addEventListener('click', () => {
     console.log(decodeToken);
     const isPremiumUser = decodeToken.isPremium;
     if (isPremiumUser)
-        window.location.replace("premium/report");
+        window.location.href = "premium/report";
     else {
         window.alert("You have to buy premiumship to unlock this feature.");
     }

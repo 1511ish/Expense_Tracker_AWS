@@ -9,6 +9,10 @@ const logOut_btn = document.getElementById('log_out');
 showLeaderBoard();
 async function showLeaderBoard() {
     const token = localStorage.getItem('token');
+    if(token==null){
+        window.alert("you have to login first to get the functionality.");
+        window.location.href = "../home";
+    }
     const response = await axios.get('showLeaderBoard', { headers: { "Authorization": token } })
     const arr = response.data;
     let i = 0
@@ -37,16 +41,16 @@ async function showLeaderBoard() {
 }
 
 report.addEventListener('click', () => {
-    window.location.href("report");
+    window.location.href = "report";
 })
 
 home.addEventListener('click', () => {
-    window.location.href('../user');
+    window.location.href = '../user';
 })
 
 logOut_btn.addEventListener('click', (e) => {
     e.preventDefault();
-    window.location.href("../home");
+    window.location.href = "../home";
     localStorage.removeItem('token');
 })
 document.getElementById('rzp-button1').style.background = '#fff';
