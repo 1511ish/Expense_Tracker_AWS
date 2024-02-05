@@ -37,7 +37,6 @@ function showPremiumUserMessage() {
 
 function parseJwt(token) {
     var base64Url = token.split('.')[1];
-
     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
     var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
         return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
@@ -49,10 +48,8 @@ function parseJwt(token) {
 
 window.addEventListener("DOMContentLoaded", () => {
     const token = localStorage.getItem('token')
-    console.log(token);
     if (token) {
         const decodeToken = parseJwt(token);
-        console.log(decodeToken);
         const isPremiumUser = decodeToken.isPremium;
         if (isPremiumUser) {
             showPremiumUserMessage();
@@ -241,7 +238,7 @@ async function buyPremium(e) {
         "key": response.data.key_id,
         "order_id": response.data.order.id,
         "handler": async function (response) {
-            const res = await axios.post('http://localhost:3000/purchase/updatetransactionstatus', {
+            const res = await axios.post('purchase/updatetransactionstatus', {
                 order_id: options.order_id,
                 payment_id: response.razorpay_payment_id
             }, { headers: { "Authorization": token } })

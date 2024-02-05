@@ -37,16 +37,16 @@ async function showLeaderBoard() {
 }
 
 report.addEventListener('click', () => {
-    window.location.replace("report");
+    window.location.href("report");
 })
 
 home.addEventListener('click', () => {
-    window.location.replace('../user');
+    window.location.href('../user');
 })
 
 logOut_btn.addEventListener('click', (e) => {
     e.preventDefault();
-    window.location.replace("../home");
+    window.location.href("../home");
     localStorage.removeItem('token');
 })
 document.getElementById('rzp-button1').style.background = '#fff';

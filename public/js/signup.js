@@ -35,8 +35,8 @@ async function signup(e) {
             throw new Error("failed to login");
         }
     } catch (err) {
-        // const form = document.getElementById('form');
-        // form.innerHTML += `<div style='color:red ;margin:5px'>${err} <div>`;
+        const form = document.getElementById('form');
+        form.innerHTML += `<div style='color:red ;margin:5px'>${err} <div>`;
         console.log(err);
     }
 

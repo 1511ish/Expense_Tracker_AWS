@@ -106,12 +106,12 @@ monthly_show.addEventListener('click', () => {
 
 show_leaderboard.addEventListener('click', () => {
     // window.location.replace("leaderboard.html");
-    window.location.replace("leaderboard");
+    window.location.href("leaderboard");
     console.log("cahl toh raha..hjgujg");
 })
 
 home.addEventListener('click', () => {
-    window.location.replace('../user');
+    window.location.href('../user');
 })
 
 document.getElementById('rzp-button1').style.background = '#fff';
@@ -119,7 +119,7 @@ document.getElementById('rzp-button1').style.color = 'rgb(39, 47, 62)';
 document.getElementById('rzp-button1').innerHTML = "You are a Premium user.<span class='fa-solid fa-crown crown_icon'></span>"
 
 document.getElementById('log_out').addEventListener('click', () => {
-    window.location.replace("../home");
+    window.location.href("../home");
     localStorage.removeItem('token');
 })
 
