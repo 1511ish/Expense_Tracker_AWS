@@ -174,3 +174,31 @@ h2 {
     background-color: green;
     box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.25);
 }
+
+#RDRC {
+    height: 85%;
+    width: 100%;
+    border-radius: 10px;
+    position: absolute;
+    display: flex;
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.25);
+    z-index: -1;
+    justify-content: center;
+    align-items: center;
+}
+
+#RDR {
+    background: #fff;
+    padding: 20px 30px;
+}
+
+#RDR i {
+    padding-left: 95%;
+    cursor: pointer;
+}
+
+.li {
+    font-size: x-large;
+    list-style: none;
+    padding: 10px 0px;
+}
