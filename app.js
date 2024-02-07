@@ -32,10 +32,10 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
 app.use(express.static('public'));
- //app.use(helmet());
+ app.use(helmet());
 // it is not requiring as it is not server side rendering.
 // app.use(compression());
- //app.use(morgan('combined', { stream: accessLogStream }));
+app.use(morgan('combined', { stream: accessLogStream }));
 
 
 app.use('/home',(req,res,next) => {
